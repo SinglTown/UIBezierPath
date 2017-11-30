@@ -15,6 +15,11 @@
 		FF81FF6D1FCD63BA00AB030E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81FF6C1FCD63BA00AB030E /* main.m */; };
 		FF81FF771FCD63BB00AB030E /* My_UIBezierPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81FF761FCD63BB00AB030E /* My_UIBezierPathTests.m */; };
 		FF81FF821FCD63BB00AB030E /* My_UIBezierPathUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81FF811FCD63BB00AB030E /* My_UIBezierPathUITests.m */; };
+		FF81FF911FCD63D200AB030E /* UIBezierPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81FF901FCD63D200AB030E /* UIBezierPathView.m */; };
+		FF81FF971FCF8FAE00AB030E /* CAShapeLayer+Mask.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81FF961FCF8FAE00AB030E /* CAShapeLayer+Mask.m */; };
+		FF81FF9D1FCF997000AB030E /* CAShapeLayer+CornerLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81FF9C1FCF997000AB030E /* CAShapeLayer+CornerLayer.m */; };
+		FF81FF9F1FCF9A0F00AB030E /* dropdown_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FF81FF9E1FCF9A0F00AB030E /* dropdown_bg.png */; };
+		FF81FFA51FCF9B2200AB030E /* AnyeReadPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF81FFA31FCF9B2100AB030E /* AnyeReadPopView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,15 @@
 		FF81FF7D1FCD63BB00AB030E /* My_UIBezierPathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = My_UIBezierPathUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF81FF811FCD63BB00AB030E /* My_UIBezierPathUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = My_UIBezierPathUITests.m; sourceTree = "<group>"; };
 		FF81FF831FCD63BB00AB030E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF81FF8F1FCD63D200AB030E /* UIBezierPathView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBezierPathView.h; sourceTree = "<group>"; };
+		FF81FF901FCD63D200AB030E /* UIBezierPathView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIBezierPathView.m; sourceTree = "<group>"; };
+		FF81FF951FCF8FAE00AB030E /* CAShapeLayer+Mask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+Mask.h"; sourceTree = "<group>"; };
+		FF81FF961FCF8FAE00AB030E /* CAShapeLayer+Mask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+Mask.m"; sourceTree = "<group>"; };
+		FF81FF9B1FCF997000AB030E /* CAShapeLayer+CornerLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+CornerLayer.h"; sourceTree = "<group>"; };
+		FF81FF9C1FCF997000AB030E /* CAShapeLayer+CornerLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+CornerLayer.m"; sourceTree = "<group>"; };
+		FF81FF9E1FCF9A0F00AB030E /* dropdown_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropdown_bg.png; sourceTree = "<group>"; };
+		FF81FFA31FCF9B2100AB030E /* AnyeReadPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnyeReadPopView.m; sourceTree = "<group>"; };
+		FF81FFA41FCF9B2100AB030E /* AnyeReadPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyeReadPopView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +115,19 @@
 		FF81FF5C1FCD63BA00AB030E /* My_UIBezierPath */ = {
 			isa = PBXGroup;
 			children = (
+				FF81FF9E1FCF9A0F00AB030E /* dropdown_bg.png */,
 				FF81FF5D1FCD63BA00AB030E /* AppDelegate.h */,
 				FF81FF5E1FCD63BA00AB030E /* AppDelegate.m */,
 				FF81FF601FCD63BA00AB030E /* ViewController.h */,
 				FF81FF611FCD63BA00AB030E /* ViewController.m */,
+				FF81FF8F1FCD63D200AB030E /* UIBezierPathView.h */,
+				FF81FF901FCD63D200AB030E /* UIBezierPathView.m */,
+				FF81FF951FCF8FAE00AB030E /* CAShapeLayer+Mask.h */,
+				FF81FF961FCF8FAE00AB030E /* CAShapeLayer+Mask.m */,
+				FF81FF9B1FCF997000AB030E /* CAShapeLayer+CornerLayer.h */,
+				FF81FF9C1FCF997000AB030E /* CAShapeLayer+CornerLayer.m */,
+				FF81FFA41FCF9B2100AB030E /* AnyeReadPopView.h */,
+				FF81FFA31FCF9B2100AB030E /* AnyeReadPopView.m */,
 				FF81FF631FCD63BA00AB030E /* Main.storyboard */,
 				FF81FF661FCD63BA00AB030E /* Assets.xcassets */,
 				FF81FF681FCD63BA00AB030E /* LaunchScreen.storyboard */,
@@ -238,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF81FF9F1FCF9A0F00AB030E /* dropdown_bg.png in Resources */,
 				FF81FF6A1FCD63BA00AB030E /* LaunchScreen.storyboard in Resources */,
 				FF81FF671FCD63BA00AB030E /* Assets.xcassets in Resources */,
 				FF81FF651FCD63BA00AB030E /* Main.storyboard in Resources */,
@@ -265,8 +289,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF81FF9D1FCF997000AB030E /* CAShapeLayer+CornerLayer.m in Sources */,
+				FF81FF911FCD63D200AB030E /* UIBezierPathView.m in Sources */,
+				FF81FFA51FCF9B2200AB030E /* AnyeReadPopView.m in Sources */,
 				FF81FF621FCD63BA00AB030E /* ViewController.m in Sources */,
 				FF81FF6D1FCD63BA00AB030E /* main.m in Sources */,
+				FF81FF971FCF8FAE00AB030E /* CAShapeLayer+Mask.m in Sources */,
 				FF81FF5F1FCD63BA00AB030E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
