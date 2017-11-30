@@ -67,17 +67,34 @@
 //
 //    view.layer.mask = layer;
     
-    //设置圆角(带有弧度)
-    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(100, 200, 200 , 200)];
-    view.contentMode = UIViewContentModeScaleAspectFill;
-    view.image = [UIImage imageNamed:@"dropdown_bg"];
-    view.layer.mask = [CAShapeLayer getImageCornerMaskWithFrame:view.bounds withCornerWdith:10];
+//    //设置圆角(带有弧度)
+//    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(100, 200, 200 , 200)];
+//    view.contentMode = UIViewContentModeScaleAspectFill;
+//    view.image = [UIImage imageNamed:@"dropdown_bg"];
+//    view.layer.mask = [CAShapeLayer getImageCornerMaskWithFrame:view.bounds withCornerWdith:10];
+//
+//
+//    view.backgroundColor = [UIColor purpleColor];
+//    [self.view addSubview:view];
     
     
-    view.backgroundColor = [UIColor purpleColor];
-    [self.view addSubview:view];
-    
-    
+    //画线
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.fillColor = [UIColor clearColor].CGColor;
+    layer.strokeColor = [UIColor purpleColor].CGColor;
+    layer.lineCap = kCALineCapRound;
+    layer.lineJoin = kCALineJoinRound;
+    layer.lineWidth = 4;
+    layer.frame = lineView.bounds;
+//    layer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 100, 100)].CGPath;
+//    layer.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 100, 100)].CGPath;
+    layer.path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(0, 0) radius:50 startAngle:M_PI endAngle:M_PI*2 clockwise:YES].CGPath;//跟正常的坐标系不太一样
+    //YES代表顺时针,NO代表逆时针,startAngle起始角度,endAngle结束角度
+    //此处的角度都是以圆的最右边为起始,0度
+    //顺时针和逆时针的计算角度是不同的
+    [lineView.layer addSublayer:layer];
+    [self.view addSubview:lineView];
     
     
     
