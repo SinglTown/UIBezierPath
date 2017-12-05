@@ -12,7 +12,9 @@
 #import "CAShapeLayer+Mask.h"
 #import "CAShapeLayer+CornerLayer.h"
 #import "AnyeReadPopView.h"
-@interface ViewController ()
+#import <YYWeakProxy.h>
+#import "AnyeRead.h"
+@interface ViewController ()<CAAnimationDelegate>
 
 @property (nonatomic,strong)AnyeReadPopView *pop;
 
@@ -29,6 +31,17 @@
     
     UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(popViewTapGRAction:)];
     [self.view addGestureRecognizer:tapGR];
+    
+    
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 200)];
+//    imageView.image = [AnyeRead start];
+//    imageView.backgroundColor = [UIColor whiteColor];
+//    [self.view addSubview:imageView];
+    
+    UIBezierPathView *bezierView = [[UIBezierPathView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 100)];
+    bezierView.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:bezierView];
+    
     
 //    
 //    UIBezierPath *path = [UIBezierPath bezierPath];
@@ -79,6 +92,7 @@
     
     
     //画线
+    /**
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
     CAShapeLayer *layer = [CAShapeLayer layer];
     layer.fillColor = [UIColor clearColor].CGColor;
@@ -89,12 +103,27 @@
     layer.frame = lineView.bounds;
 //    layer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 100, 100)].CGPath;
 //    layer.path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 100, 100)].CGPath;
-    layer.path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(0, 0) radius:50 startAngle:M_PI endAngle:M_PI*2 clockwise:YES].CGPath;//跟正常的坐标系不太一样
+    layer.path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(0, 0) radius:50 startAngle:0 endAngle:M_PI*2 clockwise:YES].CGPath;//跟正常的坐标系不太一样
     //YES代表顺时针,NO代表逆时针,startAngle起始角度,endAngle结束角度
     //此处的角度都是以圆的最右边为起始,0度
     //顺时针和逆时针的计算角度是不同的
     [lineView.layer addSublayer:layer];
     [self.view addSubview:lineView];
+    
+//    [lineView.layer addAnimation:<#(nonnull CAAnimation *)#> forKey:<#(nullable NSString *)#>]
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
+    animation.removedOnCompletion = NO;
+    animation.duration = 2;
+    animation.fillMode = kCAFillModeForwards;
+    animation.repeatCount = 3;
+    animation.toValue =@1;//此处的值表示,动画走整个路径的多少(百分比)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [layer addAnimation:animation forKey:@"animate"];
+    });
+//    animation.delegate = self;
+//    animation.delegate = [YYWeakProxy proxyWithTarget:self];
+    **/
     
     
     

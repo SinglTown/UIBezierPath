@@ -10,8 +10,24 @@
 
 @implementation UIBezierPathView
 
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self allViews];
+    }
+    return self;
+}
+-(void)allViews
+{
+    
+}
+
 -(void)drawRect:(CGRect)rect
 {
+    //绘制三角形
+    /**
     [[UIColor blackColor] set];
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:CGPointMake(100, 100)];
@@ -23,6 +39,17 @@
     
     [[UIColor blackColor] setFill];
     [path fill];
+     **/
+    
+    //绘制虚线
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+    CGContextSetLineWidth(context, 1);
+    CGContextMoveToPoint(context, 0, 50);
+    CGContextAddLineToPoint(context, self.frame.size.width, 50);
+    CGFloat arr[] = {30,10};//第一个参数标示虚线线条的宽度,第二个参数代表虚线空隙的宽度
+    CGContextSetLineDash(context, 0, arr, 2);
+    CGContextDrawPath(context, kCGPathStroke);
 }
 
 @end
